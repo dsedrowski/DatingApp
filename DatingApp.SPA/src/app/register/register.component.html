@@ -1,0 +1,17 @@
+<form #registerForm="ngForm" (ngSubmit)="register()" class="form-signin">
+    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal text-center">Please sign up</h1>
+    <div class="form-group">
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="text" id="inputEmail" class="form-control" placeholder="Email address" name="username" required [(ngModel)]="model.username">
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required [(ngModel)]="model.password">
+    </div>  
+    <div class="form-group text-center">
+        <button class="btn btn-primary" type="submit">Register</button>
+        <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
+        <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+    </div>
+  </form>

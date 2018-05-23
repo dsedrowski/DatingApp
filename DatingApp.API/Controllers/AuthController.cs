@@ -27,7 +27,8 @@ namespace DatingApp.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody]UserForRegisterDto userForRegister)
         {
-            userForRegister.Username = userForRegister.Username.ToLower();
+            if (!string.IsNullOrEmpty(userForRegister.Username))
+                userForRegister.Username = userForRegister.Username.ToLower();
             
             #region Validation
 
@@ -51,6 +52,8 @@ namespace DatingApp.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody]UserForLoginDto userForLogin)
         {
+            throw new Exception("Computer says no!");
+
             var userFromRepo = await _repo.Login(userForLogin.Username.ToLower(), userForLogin.Password);
 
             if (userFromRepo == null)

@@ -1,0 +1,13 @@
+a.active {
+    color: #ac3911 !important;
+    background: white;
+}
+
+.dropdown-item {
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background: #ac3911;
+    color: white !important;
+}

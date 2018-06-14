@@ -54,6 +54,8 @@ namespace DatingApp.API.Controllers
         {
             var userFromRepo = await _repo.Login(userForLogin.Username.ToLower(), userForLogin.Password);
 
+            Console.WriteLine("Loggin begin");
+
             if (userFromRepo == null)
                 return Unauthorized();
 
@@ -76,6 +78,7 @@ namespace DatingApp.API.Controllers
 
             #endregion
 
+            Console.WriteLine("Loggin end");
             return Ok(new { tokenString });
         }
     }
